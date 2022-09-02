@@ -8,6 +8,11 @@ jobs:
     docker:
       - image: circleci/openjdk:11.0.3-jdk-stretch
     steps:
+      - run:
+          name: The First Step
+          command: |
+            echo 'Hello World!'
+            echo 'This is the delivery pipeline'    
       - checkout
       - restore_cache:
           key: v1-gradle-wrapper-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
@@ -88,6 +93,6 @@ workflows:
   workflow:
     jobs:
     - build
-    - test:
-        requires:
-          - build
+#     - test:
+#         requires:
+#           - build
