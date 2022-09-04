@@ -95,6 +95,7 @@ jobs:
           name: Approval Complete
           command: |
             echo 'The work is now complete.'
+            echo 'yes yes'
 workflows:
   version: 2
   Myworkflow:
